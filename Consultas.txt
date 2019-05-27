@@ -25,7 +25,7 @@ order by Clientes.idade desc  limit 1
 
 
 
-4) Pega o nome e a quantidade de vezes que o cliente andou na moto
+4) Pega o nome e a quantidade de vezes que o cliente pegou moto
 
 select Clientes.nome, count(Clientes.id_cliente) as Rodas  from Motoqueiros inner join
 
