@@ -1,0 +1,40 @@
+create table Clientes(
+       id_cliente serial,
+	   nome varchar,
+	   idade int,
+	   
+	   constraint pk_cliente primary key(id_cliente)
+	 
+
+);
+create table Endereco(
+	    id_cliente int,
+        rua varchar,
+	    cidade varchar,
+	    bairro varchar,
+		constraint cliente_fk foreign key (id_cliente) references Clientes(id_cliente)
+);
+
+
+INSERT INTO Clientes(id_cliente,nome,idade)
+VALUES(1,'Wal',23),
+(2,'Wal',23);
+
+
+INSERT INTO Motoqueiros(id_motoqueiro,id_cliente,nome,idade)
+VALUES(1,2,'ZeZe',23),
+(2,1,'Alana',23);
+
+create table Motoqueiros(
+	   id_motoqueiro serial,
+       id_cliente int,
+	   nome varchar,
+	   idade int,
+	   
+	   constraint pk_motoqueiro primary key(id_motoqueiro),
+	   constraint cliente_fk foreign key (id_cliente) references Clientes(id_cliente)
+
+)
+
+
+select * from Motoqueiros inner join Clientes on Motoqueiros.id_cliente=Clientes.id_client
