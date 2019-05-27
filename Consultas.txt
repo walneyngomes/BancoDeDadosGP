@@ -1,0 +1,34 @@
+
+MINHAS CONSULTAS 
+
+1) Pega todos os clientes que estao com seus motoqueiros
+
+select * from Motoqueiros inner join Clientes on Motoqueiros.id_cliente=Clientes.id_client
+
+
+
+2) Pega o cliente que tem a menor idade 
+
+select * from Clientes inner join Motoqueiros on Clientes.id_cliente = Motoqueiros.id_cliente 
+
+order by Clientes.idade desc  limit 1
+
+
+
+
+
+3)Pega o nome do motoqueiro e cliente do que cliente que tem a menor
+
+select Clientes.nome,Motoqueiros.nome  from Clientes inner join Motoqueiros on Clientes.id_cliente = Motoqueiros.id_cliente 
+
+order by Clientes.idade desc  limit 1
+
+
+
+4) Pega o nome e a quantidade de vezes que o cliente andou na moto
+
+select Clientes.nome, count(Clientes.id_cliente) as Rodas  from Motoqueiros inner join
+
+Clientes on Clientes.id_cliente = Motoqueiros.id_cliente 
+
+group by Clientes.id_cliente
