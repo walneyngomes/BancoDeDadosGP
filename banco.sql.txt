@@ -53,3 +53,5 @@ order by Clientes.idade desc  limit 1
 select Clientes.nome, count(Clientes.id_cliente) as Rodas  from Motoqueiros inner join
 Clientes on Clientes.id_cliente = Motoqueiros.id_cliente 
 group by Clientes.id_cliente
+
+5) select * from motoqueiros where id_motoqueiro = (select id_cliente from clientes limit 1 )
