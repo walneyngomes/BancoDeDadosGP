@@ -55,3 +55,4 @@ Clientes on Clientes.id_cliente = Motoqueiros.id_cliente
 group by Clientes.id_cliente
 
 5) select * from motoqueiros where id_motoqueiro = (select id_cliente from clientes limit 1 )
+6)select ingredientes.nome from ingredientes inner join pratos_ingredientes on (ingredientes.id_ingrediente = pratos_ingredientes.id_ingrediente and pratos_ingredientes.id_prato = (select id_prato from pratos order by preco limit 1))
